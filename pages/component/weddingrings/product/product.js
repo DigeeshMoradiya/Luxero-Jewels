@@ -148,13 +148,13 @@ export default function Product({ totalPages = 4, currentPage, setCurrentPage })
             {/* Items Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 sm:gap-6 mt-4">
 
-                {items.map((item) => (
+                {items?.map((item) => (
                     <div
                         key={item.id}
                         className="relative py-4 rounded-lg flex flex-col items-center"
                     >
                         {/* New Label */}
-                        {item.label && (
+                        {item?.label && (
                             <span className="text-xs font-medium bg-[#52525B] text-white px-3 py-2 absolute top-8 left-8 font-gtAmerica">
                                 {item.label}
                             </span>

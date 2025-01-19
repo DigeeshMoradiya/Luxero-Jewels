@@ -1,6 +1,6 @@
 import Breadcrumbs from "@/pages/common/Breadcrumbs";
 import { useState } from "react";
-import { Filter } from "./filter/filter";
+import  Filter  from "./filter/filter";
 import { dialog } from "@material-tailwind/react";
 import Product from "./product/product";
 import ProductDetailsLayout from "./product-details-layout";
