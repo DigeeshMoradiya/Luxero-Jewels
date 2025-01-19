@@ -33,16 +33,16 @@ const ProductDetailsForm = ({
     const navigate = useRouter(); // Initialize navigate function
     const [isOpen, setIsOpen] = useState(false)
     const [selectedValues, setSelectedValues] = useState({
-        metal: metals[0] ?? '',
-        tone: tones[0] ?? '',
-        stoneSelection: stoneSelections[0] ?? '',
-        size: sizes[0] ?? '',
-        totalCarat: totalCarat[0] ?? '',
-        color: color[0] ?? '',
-        clarity: clarity[0] ?? '',
-        cut: cut[0] ?? '',
-        certificate: certificate[0] ?? '',
-        type: type[0] ?? '',
+        metal: metals?.[0] ?? '',
+        tone: tones?.[0] ?? '',
+        stoneSelection: stoneSelections?.[0] ?? '',
+        size: sizes?.[0] ?? '',
+        totalCarat: totalCarat?.[0] ?? '',
+        color: color?.[0] ?? '',
+        clarity: clarity?.[0] ?? '',
+        cut: cut?.[0] ?? '',
+        certificate: certificate?.[0] ?? '',
+        type: type?.[0] ?? '',
         shape: 'round' ?? '',
     });
 
