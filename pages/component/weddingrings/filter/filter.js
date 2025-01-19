@@ -101,13 +101,17 @@ export default function Filter({ open, close }) {
                                         className="text-[#27272A] text-base font-medium"
                                         onClick={() => {
                                             // Logic to clear all checkboxes
-                                            document
-                                                .querySelectorAll(
-                                                    'input[type="checkbox"]'
-                                                )
-                                                .forEach((input) =>
-                                                    input.checked = false
-                                                );
+                                            if (typeof window !== "undefined") {
+
+                                                document
+                                                    .querySelectorAll(
+                                                        'input[type="checkbox"]'
+                                                    )
+                                                    .forEach((input) =>
+                                                        input.checked = false
+                                                    );
+
+                                            }
                                         }}
                                     >
                                         Clear All
