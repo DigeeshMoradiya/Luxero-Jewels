@@ -42,29 +42,29 @@ export default function Suggestionitems() {
                 {/* Items Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 sm:gap-6">
 
-                    {items.map((item) => (
+                    {items?.map((item) => (
                         <div
-                            key={item.id}
+                            key={item?.id}
                             className="relative py-4 rounded-lg flex flex-col items-center"
                         >
                             {/* New Label */}
-                            {item.label && (
+                            {item?.label && (
                                 <span className="text-xs font-medium bg-[#D96E40] text-white px-3 py-2 absolute top-8 left-5 font-gtAmerica">
                                     {item.label}
                                 </span>
                             )}
                             {/* Product Image */}
                             <img
-                                src={item.image}
+                                src={item?.image}
                                 alt={item.name}
                                 className="w-full h-auto mb-4 object-cover cursor-pointer"
                             />
                             {/* Product Name */}
                             <h5 className="text-base md:text-lg font-medium text-[#18181B] text-center font-gtAmerica">
-                                {item.name}
+                                {item?.name}
                             </h5>
                             {/* Product Price */}
-                            <p className="text-[#71717A] font-medium text-center font-gtAmerica">{item.price}</p>
+                            <p className="text-[#71717A] font-medium text-center font-gtAmerica">{item?.price}</p>
                         </div>
                     ))}
                 </div>

@@ -60,29 +60,29 @@ const ProductReviewDetail = ({
             <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="py-4">
 
-                    {reviews.map((review, index) => (
+                    {reviews?.map((review, index) => (
                         <div key={index} className={`${index < reviews.length - 1 ? 'border-b mb-6 pb-4 ' : ''}`}
                         >
                             <div className="flex items-center gap-3">
                                 {/* Profile Image */}
                                 <img
-                                    src={review.profileImage}
-                                    alt={review.name}
+                                    src={review?.profileImage}
+                                    alt={review?.name}
                                     className="w-12 h-12 rounded-full object-cover"
                                 />
 
                                 {/* Name and Rating */}
                                 <div>
                                     <div className="flex items-center gap-3">
-                                        <h4 className="text-base font-semibold">{review.name}</h4>
-                                        <p className="text-sm text-gray-500 font-medium flex items-center">{review.date}</p>
+                                        <h4 className="text-base font-semibold">{review?.name}</h4>
+                                        <p className="text-sm text-gray-500 font-medium flex items-center">{review?.date}</p>
                                     </div>
 
                                     <div className="flex items-center mt-1">
                                         {Array.from({ length: 5 }, (_, i) => (
 
                                             <svg
-                                                className={`w-4 h-4 me-1 ${i < review.rating ? "text-[#FFC107]" : "text-[#71717A]"
+                                                className={`w-4 h-4 me-1 ${i < review?.rating ? "text-[#FFC107]" : "text-[#71717A]"
                                                     }`}
 
                                                 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
@@ -117,7 +117,7 @@ const ProductReviewDetail = ({
                         <div className="text-xl font-medium">{reviewSummary.averageRating}</div>
                     </div>
                     <div className="mt-4">
-                        {reviewSummary.stars.map((count, index) => (
+                        {reviewSummary?.stars?.map((count, index) => (
                             <div key={index} className="flex items-center gap-11 mb-5">
                                 <span className="text-sm text-[#18181B] font-semibold">{5 - index}</span>
                                 <div className="w-full bg-gray-200 h-4 rounded">
