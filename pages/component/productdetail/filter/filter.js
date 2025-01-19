@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export function Filter({ open, close }) {
+export default function Filter({ open, close }) {
 
 
     const [category, setCategory] = useState("Category")
