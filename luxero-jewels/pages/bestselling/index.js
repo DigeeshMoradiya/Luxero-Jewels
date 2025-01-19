@@ -12,6 +12,8 @@ export default function Bestselling() {
 
   const handleredirect = () => {
     router.push("/component/weddingrings")
+    console.log("dssds");
+    
   }
   return (
     <div className="px-6 py-5">
