@@ -5,13 +5,13 @@ export function Filter({ open, close }) {
 
     const [category, setCategory] = useState("Category")
 
-    useEffect(() => {
-        if (open) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-    }, [open]);
+    // useEffect(() => {
+    //     if (open) {
+    //         document.body.style.overflow = "hidden";
+    //     } else {
+    //         document.body.style.overflow = "";
+    //     }
+    // }, [open]);
 
     const handleCategory = (value) => {
         setCategory(value)
