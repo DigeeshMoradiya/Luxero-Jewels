@@ -58,7 +58,7 @@ export default function ImageCarousel({ images, videoSrc }) {
                 loop
                 onSwiper={setSwiperInstance}
             >
-                {images.map((image, index) => (
+                {images?.map((image, index) => (
                     <SwiperSlide key={index}>
                         {index === 2 ? ( // Assuming the video is the third slide (index 2)
                             <div className="relative">

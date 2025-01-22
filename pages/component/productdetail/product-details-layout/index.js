@@ -13,7 +13,7 @@ export default function ProductDetailsLayout({ children, images = [], productDet
                     <div className="flex flex-col lg:flex-row">
                         <div data-aos="fade-right" className="w-full lg:w-1/2">
                             <img src="/assest/Frame 96.png" alt="Product Image" className="w-full h-auto object-cover border mb-4 rounded-2xl" />
-                            <ImageCarousel images={images} />
+                            <ImageCarousel images={images || []} />
                         </div>
                         <div data-aos="fade-down" className="w-full lg:w-1/2 lg:pl-6 gap-4">
                             <ProductDetailsForm {...productDetails} />
