@@ -1,7 +1,10 @@
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function Cart() {
+    const router = useRouter();
+
     const cartItems = [
         { id: 1, name: 'Pi Pizza Oven', price: 449.99, image: '/assest/Frame 147.png' },
         { id: 2, name: 'Pi Pizza Oven', price: 449.99, image: '/assest/Frame 147.png' },
@@ -12,6 +15,13 @@ export default function Cart() {
     const salesTax = 102.00;
     const grandTotal = subtotal + salesTax;
     const [count, setCount] = useState(1);
+
+
+
+    const handlecheckout = () => {
+        router.push("/component/checkout")
+    }
+
 
     return (
         <div className="px-6 py-5 sm:px-4 sm:py-6 md:px-8 md:py-10">
@@ -35,7 +45,7 @@ export default function Cart() {
                     <div className="col-span-2 text-center">Quantity</div>
 
                     {/* Total Column */}
-                    <div className="col-span-2 text-center">Total</div>
+                    <div className="col-span-2 text-right">Total</div>
                 </div>
             </div>
 
@@ -81,15 +91,40 @@ export default function Cart() {
                                 </button>
                             </div>
                         </div>
-
-                        {/* Total */}
-                        <div>
-                        <div className="col-span-2 text-center text-gray-700">${(item.price * count).toFixed(2)}</div>
-                        <img src='/assest/Frame (2).svg' className="text-red-500 text-xl mx-6 w-5 cursor-pointer" />
+                        <div></div>
+                        <div className="flex items-center">
+                            <div className="text-center text-gray-700 flex-grow">
+                                ${(item.price * count).toFixed(2)}
+                            </div>
+                            <img src='/assest/Frame (2).svg' className="text-red-500 text-xl  w-5 cursor-pointer" />
                         </div>
+
                     </div>
                 ))}
+
             </div>
+            <div className="flex justify-end">
+                <div className="w-full max-w-lg p-4">
+                    <div className="flex justify-between items-center border-b-2 py-3">
+                        <span className="text-gray-500">Subtotal :</span>
+                        <span className="text-[#18181B] font-semibold">$1,019.98</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b-2 py-3">
+                        <span className="text-gray-500">Sales Tax:</span>
+                        <span className="text-[#18181B] font-semibold">$102.00</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3">
+                        <span className="text-gray-700 font-semibold">Grand Total:</span>
+                        <span className="text-[#1B864C] font-bold text-2xl">$1,121.98</span>
+                    </div>
+
+                    <button className="flex w-full p-3 text-base font-medium text-white bg-black items-center gap-2 rounded-lg hover:bg-white hover:text-black transition group border hover:border-black justify-center" onClick={handlecheckout}>
+                        Check out
+                    </button>
+                </div>
+            </div>
+
+
         </div>
 
     );
