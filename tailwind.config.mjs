@@ -12,8 +12,8 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        gtAmerica: ["'GT America Trial'", "sans-serif"], 
-        poiretOne: ["'Poiret One'", "sans-serif"], // Add the font name here
+        gtAmerica: ["'GT America Trial'", "sans-serif"],
+        poiretOne: ["'Poiret One'", "sans-serif"],
       },
       backgroundImage: {
         'hero-pattern': "url('/assest/bg-banner.jpg')",

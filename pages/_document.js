@@ -18,10 +18,8 @@ export default function Document() {
         />
       </Head>
       <body className="antialiased">
-        <Header />
         <Main />
         <NextScript />
-        <Footer />
       </body>
     </Html>
   );

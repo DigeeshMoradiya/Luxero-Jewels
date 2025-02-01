@@ -1,9 +1,15 @@
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const router = useRouter();
 
+    const handleaccount = (e) => {
+        e.preventDefault();
+        router.push('/component/account');
+    };
     return (
         <>
             <header className="bg-black text-white">
@@ -37,7 +43,7 @@ export default function Header() {
                         </div>
                         <div className="flex items-center gap-2">
                             <img src='/assest/Profile.svg' />
-                            <a href="#" className="hover:text-gray-400">Account</a>
+                            <div className="hover:text-gray-400 cursor-pointer" onClick={(e) => handleaccount(e)}>Account</div>
                         </div>
                     </div>
                     <button
@@ -79,7 +85,7 @@ export default function Header() {
                             </div>
                             <div className="flex items-center gap-2">
                                 <img src='/assest/Profile.svg' />
-                                <a href="#" className="hover:text-gray-400">Account</a>
+                                <div className="hover:text-gray-400 cursor-pointer" onClick={(e) => handleaccount(e)}>Account</div>
                             </div>
 
                         </div>

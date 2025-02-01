@@ -28,7 +28,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" className="underline text-white hover:text-gray-400 transition">
+              <a href="/component/faq" className="underline text-white hover:text-gray-400 transition">
                 FAQ's
               </a>
             </li>
@@ -40,8 +40,8 @@ export default function Footer() {
           <h4 className="mb-8 text-1xl md:text-1xl font-gtAmerica font-medium text-white uppercase">THE COMPANY</h4>
           <ul className="mt-4 space-y-4">
             <li>
-              <a href="#" className="underline text-white hover:text-gray-400 transition">
-                About Luxero
+              <a href="/component/aboutus" className="underline text-white hover:text-gray-400 transition">
+                About Us
               </a>
             </li>
             <li>
