@@ -57,7 +57,7 @@ export default function Login({ setShowlogin, setShowforget }) {
         </div>
 
         <div className="w-full md:w-1/2 p-10">
-          <h2 className="text-2xl font-semibold font-poiretOne">Welcosvsvsvme Back</h2>
+          <h2 className="text-2xl font-semibold font-poiretOne">Welcome Back</h2>
           <p className="text-sm mt-2 text-[#71717A]">
             Don’t have an account? <span className="text-[#040308] cursor-pointer font-semibold" onClick={(e) => handleShowRegister(e)}>Sign Up</span>
           </p>
