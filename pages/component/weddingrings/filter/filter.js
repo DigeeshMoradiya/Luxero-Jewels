@@ -25,7 +25,7 @@ export default function Filter({ open, close }) {
                     role="dialog"
                     aria-modal="true"
                 >
-                    <div className="bg-white shadow-xl w-full max-w-3xl rounded-lg">
+                    <div className="bg-white shadow-xl w-full max-w-3xl ">
 
                         <div className="flex items-center justify-between px-4 py-3 bg-[#18181B]">
                             <h3
@@ -66,34 +66,37 @@ export default function Filter({ open, close }) {
                                 </ul>
                             </div>
 
-                            <div className="w-2/3 p-4">
+                            <div className="w-2/3 p-4 items-end">
                                 {category === "Category" &&
 
-                                    <div className="space-y-5">
-                                        {[
-                                            "Rings",
-                                            "Necklaces",
-                                            "Earrings",
-                                            "Bracelets",
-                                            "Anklets",
-                                        ].map((category, index) => (
-                                            <div key={category} className="flex  items-center">
-                                                <input
-                                                    id={category}
-                                                    type="checkbox"
-                                                    className="w-4 h-4 rounded text-[#27272A] checked:bg-black font-gtAmerica"
-                                                    defaultChecked={index < 2 ? true : false}
-                                                    style={{ accentColor: '#18181B' }}
+                                    <div>
+                                        <div className="space-y-5">
+                                            {[
+                                                "Rings",
+                                                "Necklaces",
+                                                "Earrings",
+                                                "Bracelets",
+                                                "Anklets",
+                                            ].map((category, index) => (
+                                                <div key={category} className="flex  items-center">
+                                                    <input
+                                                        id={category}
+                                                        type="checkbox"
+                                                        className="w-4 h-4 cursor-pointer rounded text-[#27272A] checked:bg-black font-gtAmerica"
+                                                        defaultChecked={index < 2 ? true : false}
+                                                        style={{ accentColor: '#18181B' }}
 
-                                                />
-                                                <label
-                                                    htmlFor={category}
-                                                    className="ml-2 text-sm text-[#27272A]"
-                                                >
-                                                    {category}
-                                                </label>
-                                            </div>
-                                        ))}
+                                                    />
+                                                    <label
+                                                        htmlFor={category}
+                                                        className="ml-2 text-sm text-[#27272A] cursor-pointer"
+                                                    >
+                                                        {category}
+                                                    </label>
+                                                </div>
+                                            ))}
+                                        </div>
+
                                     </div>}
 
                                 <div className="flex justify-end gap-5">
@@ -120,7 +123,7 @@ export default function Filter({ open, close }) {
                                     <button className="px-8 py-2 text-base font-medium text-white bg-black flex items-center gap-2 rounded-lg    transition group" onClick={close}>
                                         Apply
                                     </button>
-                                </div>
+                                </div>  
                             </div>
                         </div>
                     </div>

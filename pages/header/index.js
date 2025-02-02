@@ -1,15 +1,35 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import SearchComponent from '../component/searchcomponent';
 
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
     const router = useRouter();
+    const openModal = () => {
+        setIsPopupOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsPopupOpen(false);
+    };
+
 
     const handleaccount = (e) => {
         e.preventDefault();
         router.push('/component/account');
     };
+    const handleDashboard = (e) => {
+        e.preventDefault();
+        router.push('/');
+    };
+
+
+    console.log(isPopupOpen, "isPopupOpen")
+
+
     return (
         <>
             <header className="bg-black text-white">
@@ -20,7 +40,7 @@ export default function Header() {
                 {/* Main Navbar */}
                 <div className="container mx-auto flex items-center justify-between px-6 bg-[#18181B]">
                     {/* Logo */}
-                    <div className="flex items-center">
+                    <div className="flex items-center cursor-pointer" onClick={(e) => handleDashboard(e)}>
                         <img
                             src="/assest/Frame 50.png"
                             alt="Luxero Jewels Logo"
@@ -39,7 +59,7 @@ export default function Header() {
                     <div className="md:flex hidden justify-center space-x-4 text-[#FAFAFA]">
                         <div className="flex items-center gap-2">
                             <img src='/assest/Search.svg' />
-                            <a href="#" className="hover:text-gray-400">Search</a>
+                            <div className="hover:text-gray-400 cursor-pointer" onClick={openModal}>Search</div>
                         </div>
                         <div className="flex items-center gap-2">
                             <img src='/assest/Profile.svg' />
@@ -69,7 +89,7 @@ export default function Header() {
 
 
                 <div
-                    className={`md:hidden overflow-hidden transition-[max-height] duration-500 ease-in-out bg-[#18181B] ${isMobileMenuOpen ? 'max-h-96' : 'max-h-0'
+                    className={`md:hidden  overflow-hidden transition-[max-height] duration-500 ease-in-out bg-[#18181B] ${isMobileMenuOpen ? 'max-h-96' : 'max-h-0'
                         }`}
                 >
                     <nav className="px-6 py-4 space-y-4 text-center font-gtAmerica uppercase text-[#FAFAFA]">
@@ -81,7 +101,7 @@ export default function Header() {
                         <div className="flex justify-center space-x-4 text-[#FAFAFA]">
                             <div className="flex items-center gap-2">
                                 <img src='/assest/Search.svg' />
-                                <a href="#" className="hover:text-gray-400">Search</a>
+                                <div className="hover:text-gray-400 cursor-pointer" onClick={openModal}>Search</div>
                             </div>
                             <div className="flex items-center gap-2">
                                 <img src='/assest/Profile.svg' />
@@ -92,6 +112,8 @@ export default function Header() {
                     </nav>
                 </div>
             </header>
+            {isPopupOpen &&
+                <SearchComponent isPopupOpen={isPopupOpen} closeModal={closeModal} />}
 
         </>
     );
